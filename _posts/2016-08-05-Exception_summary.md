@@ -39,30 +39,29 @@ description:
 ```java
     public MarketManager getMarketManager(int shopId) {
         PackageInfoDto packageInfoDto = getManagerByRestaurant(shopId);
-        if (packageInfoDto == null) return null;
-        MarketManager manager = new MarketManager();
-        if (packageInfoDto.getPackageManagerPhone() > 0) {
-            manager.setName(packageInfoDto.getPackageManagerName());
-            manager.setMobile(String.valueOf(packageInfoDto.getPackageManagerPhone()));
-            manager.setMail(packageInfoDto.getPackageManagerEmail());
-        } else {
-            manager.setName(packageInfoDto.getCampManagerName());
-            manager.setMobile(String.valueOf(packageInfoDto.getCampManagerPhone()));
-            manager.setMail(packageInfoDto.getCampManagerEmail());
+
+        if (packageInfoDto == null) {
+            return null;
         }
-        return manager;
+        MarketManager marketManager = new MarketManager();
+        marketManager.setName(packageInfoDto.getPackageManagerName());
+        marketManager.setMail(packageInfoDto.getPackageManagerEmail());
+        marketManager.setMobile(String.valueOf(packageInfoDto.getPackageManagerPhone()));
+        return marketManager;
     }
 
-    private PackageInfoDto getManagerByRestaurant(int shopId) {
+    public PackageInfoDto getManagerByRestaurant(int shopId){
+        PackageInfoDto packageInfoDto;
         try {
-            return policyService.getPackageInfoByRstId(shopId);
-        } catch (me.ele.contract.exception.ServiceException e) {
-            logger.info("getManagerByRestaurant service exception", e);
+            packageInfoDto = policyService.getPackageInfoByRstId(shopId);
+        }  catch (me.ele.contract.exception.ServiceException e) {
+            logger.info("Execption at policyService.getPackageInfoByRstId, shopId is " + shopId,e.getMessage());
             return null;
-        } catch (ServerException e) {
-            logger.error("getManagerByRestaurant error", e);
-            return null;
+        } catch (Exception e){
+            logger.error("ServerExecption at policyService.getPackageInfoByRstId, shopId is " + shopId,e);
+            throw new ServerErrorException("Execption at policyService.getPackageInfoByRstId, shopId is " + shopId,e);
         }
+        return packageInfoDto;
     }
 ```
 
@@ -72,7 +71,7 @@ description:
 
 ## ServiceException,RuntimeException,Exception
 
-ServiceException定义为正常业务的异常，当服务有依赖，那么ServiceException捕获到了可以根据业务来决定如何处理。具体地说，如果要挂一起挂，那就不让它过，new一个ServiceException；如果业务没影响，打个日志就可以了。
+ServiceException定义为正常业务的异常，一个调用一次抛这个异常，那他每一次都会抛这个异常。当服务有依赖，那么ServiceException捕获到了可以根据业务来决定如何处理。具体地说，如果要挂一起挂，那就不让它过，new一个ServiceException；如果业务没影响，打个日志就可以了。
 
 RuntimeException属于非异常，是不可预知的。需要处理，可以根据业务耦合度判断是否new一个exception，还是完全不用管。
 

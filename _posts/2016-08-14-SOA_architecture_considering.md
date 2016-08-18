@@ -42,7 +42,7 @@ ps：[RESTful](http://www.cnblogs.com/artech/p/3506553.html)
 
 ### RPC请求接收
 
-​	请求接收通过Netty来处理，封一个HttpJsonServer，启动的时候加载一些ChannelHandler：JsonRequestDeserializer，异步处理的handler。我们可以在SOA Container里启动该server。
+​	http长连接请求接收基于Netty来实现异步阻塞，封一个HttpJsonServer，启动的时候加载一些ChannelHandler：JsonRequestDeserializer，异步处理的handler。我们可以在SOA Container里启动该server。
 
 具体可以看：[异步处理模型]({% post_url 2016-06-13-Async_queue_program_model %})
 

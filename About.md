@@ -26,7 +26,11 @@ header-img: "img/background_grey.png"
 
 - 文字
 
+**科学上网**
 
+输入我的邀请码 X4X5V4 ，额外获得三个月的蓝灯专业版！
+
+http://www.ishadowsocks.org/
 
 > 审慎乐观
 

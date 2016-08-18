@@ -6,7 +6,10 @@ tags: [Efficiency]
 description: 
 ---
 
-OSX小功能
+Mac OSX小功能
+
+### 查单词
+command+control+d
 
 ### **输出带声调字母**
 

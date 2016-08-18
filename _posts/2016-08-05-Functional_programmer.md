@@ -21,3 +21,7 @@ Collections.sort(bpmBdEvaluates, new Comparator<BpmBdEvaluate>() {
 });
 return bpmBdEvaluates.get(bpmBdEvaluates.size() - 1);
 ```
+使用Lambda
+```
+Collections.sort(bpmBdEvaluates, (o1, o2) -> o1.getUpdated_at().compareTo(o2.getUpdated_at()));
+```

@@ -63,6 +63,15 @@ brew install autojump
 vim ~/.zshrc
 plugins=(git osx ruby autojump)
 ```
+# Ubuntu
 
-
+## 软件源修改
+把http://archive.ubuntu.com修改为main Sources
+```
+sudo vi /etc/apt/sources.list
+sudo apt-get update
+```
+## 开发环境
+Git
+`sudo apt-get install git-core`
 
