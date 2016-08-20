@@ -10,7 +10,9 @@ SOA架构的考虑
 
 一个SOA中间件应该有以下部分:
 
-​	Container、RPC框架、Daemon、Heartbeat、LoadBalance、Monitor。
+​	Container、RPC框架、Register、Daemon、Heartbeat、LoadBalance、Monitor。
+
+核心是RPC和Register。
 
 [TOC]
 

@@ -66,6 +66,8 @@ header-img: "img/background_grey.png"
 
 [卡尔维诺中文站](http://www.ruanyifeng.com/calvino/)
 
+[名作欣赏·文学鉴赏](http://www.readers365.com/jianshang/)
+
 ### 独乐乐
 
 [DONMAI](http://danbooru.donmai.us/posts/)

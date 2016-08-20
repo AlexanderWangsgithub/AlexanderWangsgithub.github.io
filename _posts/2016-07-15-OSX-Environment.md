@@ -52,6 +52,7 @@ alias gcmt="git commit -m"
 alias aj="autojump"
 alias jdk7="export JAVA_HOME=$JAVA7_HOME"
 alias jdk8="export JAVA_HOME=$JAVA8_HOME"
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 ```
 
 use it at new terminal window

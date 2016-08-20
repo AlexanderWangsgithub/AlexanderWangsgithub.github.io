@@ -112,5 +112,13 @@ sudo tcpdump -i wlan0 'host www.baidu.com and tcp[13]&2!=0'
 curl -o filename url
 ```
 
-
+### splite
+压缩分割文件
+```
+tar zcvf - lantern-installer-beta.dmg |split -b 1m - lantern_install.tar.gz
+```
+解压
+```
+cat lantern_install.tar.gza* |tar zx
+```
 
