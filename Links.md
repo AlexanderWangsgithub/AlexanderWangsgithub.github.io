@@ -17,8 +17,13 @@ header-img: "img/background_grey.png"
 
 [并发编程网](http://ifeve.com/)
 
+[fir.im](http://blog.fir.im/)
+
+####Deep Learning
+
 [TensorFlow](http://wiki.jikexueyuan.com/project/tensorflow-zh/tutorials/mnist_beginners.html)
 [TensorFlow China](http://www.tensorfly.cn/)
+[TensorFlow Notes](https://github.com/ahangchen/GDLnotes)
 
 #### 牛
 
@@ -42,6 +47,7 @@ header-img: "img/background_grey.png"
 ​
 
 ### Tools 
+
 [Process On](https://www.processon.com/diagrams)
 
 [Download Youtube](http://en.savefrom.net/)
@@ -55,6 +61,8 @@ header-img: "img/background_grey.png"
 [IT-Ebooks](http://www.it-ebooks.info/)
 
 [Mac Software](http://xclient.info/)
+
+[电话号码生成](http://www.ifreesite.com/phone/)
 
 ### 文字
 
