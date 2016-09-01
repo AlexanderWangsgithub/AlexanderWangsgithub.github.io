@@ -13,6 +13,9 @@ summary some linux commands
 ```
 awk 'BEGIN{FS="/";OFS="\0"}{print "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-",$5,".jpg"}' test
 ```
+```
+jps|awk '{print $1}' |xargs -t kill -9 {}
+```
 
 FS 输入字段分隔符（缺省为:space:）
 

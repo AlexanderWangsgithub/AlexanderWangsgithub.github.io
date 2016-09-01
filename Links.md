@@ -19,6 +19,8 @@ header-img: "img/background_grey.png"
 
 [fir.im](http://blog.fir.im/)
 
+[highscalability](http://highscalability.com/)
+
 ####Deep Learning
 
 [TensorFlow](http://wiki.jikexueyuan.com/project/tensorflow-zh/tutorials/mnist_beginners.html)
@@ -48,6 +50,8 @@ header-img: "img/background_grey.png"
 
 ### Tools 
 
+[Google Image](http://google.adwiki.cn/)
+
 [Process On](https://www.processon.com/diagrams)
 
 [Download Youtube](http://en.savefrom.net/)
@@ -75,6 +79,8 @@ header-img: "img/background_grey.png"
 [卡尔维诺中文站](http://www.ruanyifeng.com/calvino/)
 
 [名作欣赏·文学鉴赏](http://www.readers365.com/jianshang/)
+
+[梦远书城](http://www.my285.com/wuxia/gulong/dqjkwqj/index.htm)
 
 ### 独乐乐
 
