@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About Me"
-description: "对世界好奇"
+description: "是码农"
 header-img: "img/background_grey.png"
 ---
 
