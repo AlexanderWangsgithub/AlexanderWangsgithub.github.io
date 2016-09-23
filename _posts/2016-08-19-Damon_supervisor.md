@@ -36,17 +36,17 @@ description:
    跳到最后一行，插入以下内容：
 
    ```
-   [www-data@vpca-arena-api-melody-1 supervisord.d]$ cat arena.api.melody.ini
-   [program:arena.api.melody]
+   $ cat service.ini
+   [program:arena.api.test]
    command=sh script/start_service.sh //要后台运行的命令[program:程序名]
    autorestart=true  //程序随supervisor启动
-   process_name=arena.api.melody
+   process_name=arena.api.test
    numprocs=1
    stopsignal=INT
-   directory=/data/arena.api.melody
-   user=www-data
+   directory=/data/arena.api.test
+   user=usertest
    redirect_stderr=true
-   stdout_logfile=/data/log/supervisor/arena.api.melody.out  //指定标准日志输出文件
+   stdout_logfile=/data/log/supervisor/arena.api.test.out  //指定标准日志输出文件
    stdout_logfile_maxbytes=100MB
    stdout_logfile_backups=10
    stopasgroup=true

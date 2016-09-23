@@ -32,7 +32,7 @@ description:
 
 ```mysql
 
-CREATE TABLE `arena_notice_template`.`<table_name>` (
+CREATE TABLE `notice_template`.`<table_name>` (
 	`id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
 	`template_title` varchar(40) NOT NULL COMMENT '标题',
 	`template_content` text DEFAULT NULL COMMENT '内容',

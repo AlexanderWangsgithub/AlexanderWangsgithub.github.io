@@ -12,23 +12,22 @@ description:
 错误：
 
 ```java
-    public MarketManager getMarketManager(int shopId) throws ServiceException {
-        PackageInfoDto packageInfoDto = getManagerByRestaurant(shopId);
-        MarketManager marketManager = new MarketManager();
-        marketManager.setName(packageInfoDto.getPackageManagerName());
-        marketManager.setMail(packageInfoDto.getPackageManagerEmail());
-        marketManager.setMobile(String.valueOf(packageInfoDto.getPackageManagerPhone()));
-        return marketManager;
+    public Owner getOwner(int ownerId) throws ServiceException {
+        OwnerInfo ownerInfo = getOwnerInfoByOwnerId(ownerId);
+        Owner owner = new Owner();
+        owner.setName(ownerInfo.getName());
+        owner.setMobile(String.valueOf(ownerInfo.getPhone()));
+        return owner;
     }
 
-    private PackageInfoDto getManagerByRestaurant(int shopId) {
+    private OwnerInfo getOwnerInfoByOwnerId(int ownerId) {
         try {
-            return policyService.getPackageInfoByRstId(shopId);
+            return ownerService.getOwnerInfoByOwnerId(ownerId);
         } catch (ServiceException e) {
-            logger.info("getManagerByRestaurant service exception", e);
+            logger.info(" service exception", e);
             return null;
         } catch (ServerException e) {
-            logger.error("getManagerByRestaurant error", e);
+            logger.error("error", e);
             return null;
         }
     }
@@ -37,29 +36,28 @@ description:
 正确：
 
 ```java
-    public MarketManager getMarketManager(int shopId) {
-        PackageInfoDto packageInfoDto = getManagerByRestaurant(shopId);
+    public Owner getOwner(int ownerId) {
+       OwnerInfo ownerInfo = getOwnerInfoByOwnerId(ownerId);
 
-        if (packageInfoDto == null) {
+        if (ownerInfo == null) {
             return null;
         }
-        MarketManager marketManager = new MarketManager();
-        marketManager.setName(packageInfoDto.getPackageManagerName());
-        marketManager.setMail(packageInfoDto.getPackageManagerEmail());
-        marketManager.setMobile(String.valueOf(packageInfoDto.getPackageManagerPhone()));
-        return marketManager;
+         Owner owner = new Owner();
+        owner.setName(ownerInfo.getName());
+        owner.setMobile(String.valueOf(ownerInfo.getPhone()));
+        return owner;
     }
 
-    public PackageInfoDto getManagerByRestaurant(int shopId){
-        PackageInfoDto packageInfoDto;
+     private OwnerInfo getOwnerInfoByOwnerId(int ownerId){
+        OwnerInfo ownerInfo;
         try {
-            packageInfoDto = policyService.getPackageInfoByRstId(shopId);
-        }  catch (me.ele.contract.exception.ServiceException e) {
-            logger.info("Execption at policyService.getPackageInfoByRstId, shopId is " + shopId,e.getMessage());
+            ownerInfo = ownerService.getOwnerInfoByOwnerId(ownerId)
+        }  catch (ServiceException e) {
+            logger.info("ownerId is " + ownerId,e.getMessage());
             return null;
         } catch (Exception e){
-            logger.error("ServerExecption at policyService.getPackageInfoByRstId, shopId is " + shopId,e);
-            throw new ServerErrorException("Execption at policyService.getPackageInfoByRstId, shopId is " + shopId,e);
+            logger.error("ownerId ownerId is " + ownerId,e);
+            throw new ServerErrorException("Execption at ownerService.getOwnerInfoByOwnerId(ownerId), ownerId is " + ownerId,e);
         }
         return packageInfoDto;
     }

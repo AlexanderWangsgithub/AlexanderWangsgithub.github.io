@@ -8,6 +8,8 @@ description: 应对大并发量的缓冲
 
 # Async异步队列编程模型
 
+经过压测，未使用。
+
 ## 应用场景
 
 **Before：**ContextRequest——>workflow(contextRequest)
