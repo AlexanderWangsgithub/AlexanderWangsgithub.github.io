@@ -20,6 +20,7 @@ SOA架构的考虑
 
 ​	对于RPC（远程调用），最少我们得有Web API调用方式，一般为RESTful风格，通过http＋约定来实现远程调用，如http+json/xml，对于B/S来说，采用这种方式对B端更加友好。然而，这种方式毕竟效率不够高，对于MicroServer之间的RPC，显然直接使用二进制+TCP，通过C/S来约定更为高效，如ProtocolBuffers、thrift。
 
+
 ## Web API
 
 ### RPC通信协议
@@ -69,6 +70,56 @@ ps：[RESTful](http://www.cnblogs.com/artech/p/3506553.html)
 ### RPC协议传输
 
 ### RPC请求解析
+
+提纲：
+
+问题：
+有返回和无返回
+请求是否幂等
+超时，在s收到了请求；c请求了
+异常处理：是否收到
+
+通信：
+两将军问题，如何确认是对方收到消息，重复ack。
+
+
+数据
+
+跨机器查询
+
+方法：数据分区、数据镜像
+
+
+高可用——》写多份
+数据一致性：弱（异步）、最终一致性（异步）、强（同步）
+事务
+
+Master-slave
+lease机制
+Master-Master merge conflict 
+
+mysql 半同步
+（阿里是半同步，城市之间）
+
+
+两阶段提交
+
+1. try confirm or cancel?
+2. confirm
+
+三阶段提交
+	状态机
+
+paxos算法
+
+
+etcd、zookeeper
+
+cap系统
+google分布式 2008 数据一致性
+
+brw模型，dynameDB
+
 
 
 

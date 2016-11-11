@@ -16,6 +16,10 @@ description:
 
 - 重复频率极高的应该使用聚簇索引
 
+## 使用注意
+
+- 一条查询语句只能用到一条索引
+- 把筛选出的结果少的条件放在前面
   ​
 
 ## 概念
@@ -40,7 +44,7 @@ CREATE TABLE `notice_template`.`<table_name>` (
 	`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
 	`updated_at` timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '修改时间',
 	PRIMARY KEY (`id`),
-	INDEX `idIndex` USING BTREE (`id`) comment ''
+	INDEX `idIndex` USING BTREE (`template_id`) comment ''
 ) ENGINE=`InnoDB` AUTO_INCREMENT=350 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ROW_FORMAT=COMPACT COMMENT='模板表' CHECKSUM=0 DELAY_KEY_WRITE=0;
 ```
 
