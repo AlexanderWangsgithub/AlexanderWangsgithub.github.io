@@ -2,13 +2,39 @@
 layout: post
 title: SOA架构的考虑
 categories: [blog]
-tags: [SOA]
+tags: [SOA,Architecture]
 description: 
 ---
 
-SOA架构的考虑
+微服务SOA架构的考虑
 
-一个SOA中间件应该有以下部分:
+[TOC]
+
+## 说明
+
+SOA是面向服务架构的意思，和微服务不是一个概念，譬如我上家公司的SOA就是通过ESB的形式实现服务注册和通信，这样的问题是随着业务变得复杂化不易维护。微服务本质是SOA，但是拆分了业务。
+
+## 微服务适用情况
+
+1. 业务复杂，并会越来越复杂；
+2. 多种开发语言
+3. 频繁发布
+4. 监控（包括不同粒度和调用链）
+5. 熔断
+
+## 一些问题
+
+### 分布式事务
+
+#### 实现
+
+通过消息队列实现，通过消息调用其他服务。
+
+
+
+## 具体实现
+
+一个微服务SOA中间件应该有以下部分:
 
 ​	Container、RPC框架、Register、Daemon、Heartbeat、LoadBalance、Monitor。
 
