@@ -6,13 +6,44 @@ tags: [Java]
 description: 
 ---
 
+[TOC]
+
+## 注意
+
+Lambda好用但是要注意：
+
+- filter判空
+- 对于争用资源，并行带来的压力
+
+## 使用
+
+### 判空filter
+
+判空要对每一个元素对象（p）进行判空。
+
+```java
+noticeSet.stream()
+  .filter(p -> p != null)
+  .filter(p -> gravityMap.get(String.valueOf(p)) != null)            
+  .filter(p -> gravityMap.get(String.valueOf(p)) == gravity.getValue()).collect(Collectors.toSet());
+```
 
 
 
+### 排序sorted&比较Comparator
 
-获得排序并获得最大值
+```java
+        Comparator<SimpleNotice> byBeginDate = (s1, s2) -> s2.getBeginDate().compareTo(s1.getBeginDate());//根据begin倒序
+
+            return allSimpleNotice.stream().filter(p -> p != null).sorted(byBeginDate).collect(Collectors.toList());
 
 ```
+
+
+
+#### 新老写法比较
+
+```java
 Collections.sort(bpmBdEvaluates, new Comparator<BpmBdEvaluate>() {
     @Override
     public int compare(BpmBdEvaluate o1, BpmBdEvaluate o2) {
@@ -22,6 +53,22 @@ Collections.sort(bpmBdEvaluates, new Comparator<BpmBdEvaluate>() {
 return bpmBdEvaluates.get(bpmBdEvaluates.size() - 1);
 ```
 使用Lambda
-```
+```java
 Collections.sort(bpmBdEvaluates, (o1, o2) -> o1.getUpdated_at().compareTo(o2.getUpdated_at()));
 ```
+### map
+
+```java
+oldNotice.stream().map(p -> new SimpleNotice(p.getId(), NoticeType.PERMESSAGE.getValue(),
+                    p.getTitle(), p.getTitle(), p.getBeginDate(), (p.isRead() ? 1 : 0))).collect(Collectors.toSet());
+```
+
+
+
+### groupBy
+
+```java
+        List<Province> provinceList = provinceNameMap.entrySet().stream().map(p -> new Province(p.getKey(), p.getValue(), citysMap.get(p.getKey()))).collect(Collectors.toList());
+
+```
+
