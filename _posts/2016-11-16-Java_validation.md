@@ -1,4 +1,10 @@
-
+---
+layout: post
+title: Java Validation
+categories: [blog]
+tags: [Java]
+description: 
+---
 
 JSR303定义的校验类型
 
