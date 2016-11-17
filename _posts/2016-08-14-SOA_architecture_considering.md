@@ -28,7 +28,8 @@ SOA是面向服务架构的意思，和微服务不是一个概念，譬如我�
 
 #### 实现
 
-通过消息队列实现，通过消息调用其他服务。
+1. 通过消息队列实现，通过消息调用其他服务。即[CORS_and_EventSourcing]({% post_url 2016-11-16-CORS_and_EventSourcing %})
+2. [补偿措施]({% post_url 2016-11-17-Rollback_and_compensate %})
 
 
 

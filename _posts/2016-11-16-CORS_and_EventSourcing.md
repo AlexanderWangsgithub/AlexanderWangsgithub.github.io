@@ -28,7 +28,7 @@ QRS（Command Query Responsibility Segration）说白了就是职责分离。其
 
 
 
-[实现的例子]（http://www.codeproject.com/Articles/555855/Introduction-to-CQRS）
+[实现的例子](http://www.codeproject.com/Articles/555855/Introduction-to-CQRS)
 
 
 

@@ -8,3 +8,31 @@ description:
 
 
 ｜表示表格
+
+![alias](/img/post/2016-07-06/sendInAndMQout.jpg)
+hotkey:alt+command+i
+short code 
+
+start        
+end          
+operation    
+subroutine   
+condition    
+inputoutput
+
+```flow
+st=>start: Start
+e=>end: End
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes or No
+io=>inputoutput: catch something…
+
+st->op1->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op1
+```
+
+[读书笔记]({% post_url 2016-06-13-The_Road_Less_Traveled_ReadNote %})
+
+

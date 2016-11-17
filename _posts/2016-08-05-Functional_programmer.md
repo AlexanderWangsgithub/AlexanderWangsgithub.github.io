@@ -8,6 +8,10 @@ description:
 
 [TOC]
 
+## 理解
+
+lambda的本质是一个匿名方法。譬如(x,y)->{return x+y}
+
 ## 注意
 
 Lambda好用但是要注意：
