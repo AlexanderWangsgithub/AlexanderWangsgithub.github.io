@@ -2,7 +2,7 @@
 layout: post
 title: 分布式事务——回退与补偿
 categories: [blog]
-tags: [tags]
+tags: [Architecture]
 description: 
 ---
 
