@@ -1,12 +1,12 @@
 ---
 layout: post
-title: head
+title: 所有WIW都会得到
 categories: [blog]
-tags: [tags]
+tags: [Journal]
 description: 
 ---
 
-大叔说，所以WIW都会得到。我信的。
+大叔说，所有WIW都会得到。我信的。
 
 就是What I Want，长草的欲望。
 
