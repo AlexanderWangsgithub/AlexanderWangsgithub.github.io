@@ -82,8 +82,6 @@ header-img: "img/background_grey.png"
 
 [梦远书城](http://www.my285.com/wuxia/gulong/dqjkwqj/index.htm)
 
-### 独乐乐
+[我的小书屋](http://mebook.cc/)
 
-[DONMAI](http://danbooru.donmai.us/posts/)
 
-[微趣](http://www.micnew.com/)

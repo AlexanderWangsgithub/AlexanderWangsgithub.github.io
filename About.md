@@ -16,15 +16,15 @@ header-img: "img/background_grey.png"
 
 **工作：**
 
-- 今：饿了么-商户系统架构研发，Java开发工程师
+- 今：饿了么-napos-通用架构组，Java开发工程师
 
 **好奇**
 
 - 数学与程序实现
-
 - 吃法与做法
-
 - 文字
+- [Lofter](http://alexanderwang.lofter.com/)
+- Guitar & Ukulele
 
 
 

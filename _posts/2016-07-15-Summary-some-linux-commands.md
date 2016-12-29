@@ -25,6 +25,16 @@ RS输出字段分隔符（缺省为:\n）
 
 ORS输出字段分隔符（缺省为:\n）
 
+##### 模式
+
+杀死占用进程
+
+`lsof -i :8090|awk '$2 !~ /PID/ {print $2}'|xargs kill -9`
+
+~是模式匹配，!~是反模式
+
+[陈皓教程](http://coolshell.cn/articles/9070.html)
+
 ## vi
 
 ### 命令模式：
@@ -103,7 +113,21 @@ sudo tcpdump -i wlan0 'host www.baidu.com and tcp[13]&2!=0'
 
 ### lsof -i
 
+查看端口占用
+
+`lsof -i :8090`
+
+杀死占用进程
+
+`lsof -i :8090|awk '$2 !~ /PID/ {print $2}'|xargs kill -9`
+
+~是模式匹配，!~是反模式
+
+
+
 ### ps -ef
+
+
 
 ### pkill
 
@@ -125,3 +149,14 @@ tar zcvf - lantern-installer-beta.dmg |split -b 1m - lantern_install.tar.gz
 cat lantern_install.tar.gza* |tar zx
 ```
 
+
+
+## redis批量删除
+
+```
+➜  ~ redis-cli -h 192.168.112.94 -p 6379 keys "cache:arena_message-NoticeCache:*" | xargs redis-cli -h 192.168.112.94 -p 6379 del
+```
+
+登录：`redis-cli -h 192.168.112.94 -p 6379`
+
+列举所有key：`redis-cli keys "cache:arena_message-NoticeCache:*" `
