@@ -40,32 +40,5 @@ eg：list.sub(0,0)，其class为java.util.RandomAccessSubList，不利于工具�
 
 如果涉及并发修改的话直接用分布式应用，zk、etcd或redis都可以，不涉及修改，直接final好了。
 
-- 引用与方法变量
-
-line = `include 'arena-docs'`
-
-```
-    private String getMoudle(String line) {
-        if (line.contains("include"))
-            line.replace("include", "");
-        return line;
-    }
-```
-
-return line = `include 'arena-docs'`
-
-line = `include 'arena-docs'`
-
-```
-    private String getMoudle(String line) {
-    	String lineLocal = line;
-        if (lineLocal.contains("include"))
-            lineLocal.replace("include", "");
-        return lineLocal;
-    }
-```
-
-return line = ` 'arena-docs'`
-
 
 
