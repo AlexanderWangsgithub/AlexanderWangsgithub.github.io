@@ -34,11 +34,15 @@ eg：list.sub(0,0)，其class为java.util.RandomAccessSubList，不利于工具�
 
 `redis-cli -h 127.0.0.1 -p 6379 keys "cache:arena_message-NoticeCache:arena:BoardcastReviseDataSwitch:*" | xargs redis-cli -h 127.0.0.1 -p 6379 del` 将127.0.0.1替换为redis服务器地址。
 
-## JDK
+## 发布
 
-- static变量的使用
+多人协作需规范
 
-如果涉及并发修改的话直接用分布式应用，zk、etcd或redis都可以，不涉及修改，直接final好了。
+master用于回退，release用于线上，develop用于多人协作alpha。
 
+feature需合develop再发布、发版，以避免其他人feature丢失。
 
+develop发snapshot
+
+release发release
 
