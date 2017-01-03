@@ -2,7 +2,7 @@
 layout: post
 title: Graphite介绍
 categories: [blog]
-tags: [Vine]
+tags: [DevOps]
 description: 服务调用时间和频次等信息等监控工具
 ---
 
