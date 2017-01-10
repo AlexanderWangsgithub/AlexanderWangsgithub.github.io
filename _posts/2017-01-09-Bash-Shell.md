@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Java||Python程序员的shell快速教程
+title: Java or Python程序员的shell快速教程
 categories: [blog]
 tags: [Efficiency]
 description: 
 ---
 
-Java||Python程序员的shell快速教程
+Java or Python程序员的shell快速教程
 
 [TOC]
 
@@ -146,4 +146,10 @@ done
 
 
 
-[不完整的教程](https://github.com/qinjx/30min_guides/blob/master/shell.md#case)
+## 附录
+
+- [一些Sample](http://tldp.org/LDP/abs/html/)
+
+- [Unix Shell Programming](http://www.tutorialspoint.com/unix/unix-shell.htm)
+- [Linux Shell Scripting Tutorial - A Beginner's handbook](http://bash.cyberciti.biz/guide/Main_Page)
+
