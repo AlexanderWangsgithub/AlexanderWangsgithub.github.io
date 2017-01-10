@@ -1,14 +1,35 @@
 ---
 layout: post
-title: 关于Bash Shell
+title: Java||Python程序员的shell快速教程
 categories: [blog]
-tags: [tags]
+tags: [Efficiency]
 description: 
 ---
 
-关于Bash Shell
+Java||Python程序员的shell快速教程
 
+[TOC]
 
+## 介绍
+
+```
+#!/bin/bash
+#usage ./initbook.sh GitbookGuide
+echo Your gitbook name is $1
+mkdir $1
+mkdir "${1}_pages"
+
+cd $1
+echo ".DS_Store" > .gitignore
+```
+
+看上面的示例，`#!/bin/bash`表示解释器，`#`表示注释，`$1`是第一个输入参数。
+
+将脚本保存为`initbook.sh`，执行的时候，先`chmod +x initbook.sh`赋给执行权限，然后`./initbook.sh GitbookGuide`即可运行脚本。
+
+对于Shell编程，一般用来做简单的脚本，方便使用linux下awk，sed，grep，crontab等非常方便的命令，以完成服务器任务。
+
+除了各种命令行工具外，理解了变量的使用基本流利写shell了，逻辑语句都大差不差的。
 
 ## 变量
 
@@ -28,22 +49,101 @@ done
 
 变量名和等号之间不能有空格
 
+
+
+### String
+
+- 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的
+- 单引号字串中不能出现单引号（对单引号使用转义符后也不行）
+
+#### 获取字符串长度
+
 ```
-for file in `ls ~/`
+string="hello"
+echo ${#string}
 ```
 
-## String
+#### 提取子字符串
 
-单引号
+```
+string="hello world"
+echo ${string:1:4} 
+```
 
-str='this is a string'
-单引号字符串的限制：
+输出：elllo
 
-单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的
-单引号字串中不能出现单引号（对单引号使用转义符后也不行）
-双引号
+#### 查找子字符串
 
-your_name='qinjx'
-str="Hello, I know your are \"$your_name\"! \n"
-双引号里可以有变量
-双引号里可以出现转义字符
+```
+string="hello world"
+echo `expr index "$string" o` 
+```
+
+输出：8，这个语句的意思是：找出单词is在这名话中的位置
+
+[more](http://tldp.org/LDP/abs/html/string-manipulation.html)
+
+## 逻辑语句
+
+### for
+
+```
+for file in `ls $dir1`
+do cp -r "$dir1$file" $dir2
+done
+```
+
+### if
+
+```
+if condition1
+then
+    command1
+elif condition2
+    command2
+else
+    commandN
+fi
+```
+
+跟Python差不多。
+
+### while
+
+```shell
+for var in item1 item2 ... itemN
+do
+    command1
+    command2
+    ...
+    commandN
+done
+```
+
+
+
+## 命令行工具
+
+陆续写成[GitBook](https://alexanderwangsgithub.github.io/Linux_Command_Tutorial)
+
+地址：https://alexanderwangsgithub.github.io/Linux_Command_Tutorial/
+
+## 注意点
+
+### copy dir
+
+cp目录时`cp -r`不好使，使用for遍历
+
+```shell
+pathAbs=`pwd`
+dir1="$pathAbs/$projectName/_book/"
+dir2="${projectName}_pages"
+
+for file in `ls $dir1`
+do cp -r "$dir1$file" $dir2
+done
+```
+
+
+
+[不完整的教程](https://github.com/qinjx/30min_guides/blob/master/shell.md#case)
