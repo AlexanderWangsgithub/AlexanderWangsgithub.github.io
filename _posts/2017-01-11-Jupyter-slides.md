@@ -74,7 +74,7 @@ Cell的sub-cell，上下滑动切换
 ## gen
 
 ```shell
-jupyter nbconvert --to slides --reveal-prefix "http://cdn.jsdelivr.net/reveal.js/2.6.2" xxx.ipynb
+jupyter-nbconvert --to slides Python_Share.ipynb --reveal-prefix '//cdn.bootcss.com/reveal.js/3.2.0' --output Python_Share
 ```
 
 ## server

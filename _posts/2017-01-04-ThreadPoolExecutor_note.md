@@ -23,7 +23,7 @@ ThreadPoolExecutor之前在做一些异步处理的时候会用到，最近的�
 ## 参数
 
 ```
-    1、corePoolSize：核心线程数
+corePoolSize：核心线程数
         * 核心线程会一直存活，及时没有任务需要执行
         * 当线程数小于核心线程数时，即使有线程空闲，线程池也会优先创建新线程处理
         * 设置allowCoreThreadTimeout=true（默认false）时，核心线程会超时关闭
@@ -40,18 +40,79 @@ ThreadPoolExecutor之前在做一些异步处理的时候会用到，最近的�
         * 如果allowCoreThreadTimeout=true，则会直到线程数量=0
 
     5、allowCoreThreadTimeout：允许核心线程超时
-    6、rejectedExecutionHandler：任务拒绝处理器
-        * 两种情况会拒绝处理任务：
-            - 当线程数已经达到maxPoolSize，切队列已满，会拒绝新任务
-            - 当线程池被调用shutdown()后，会等待线程池里的任务执行完毕，再shutdown。如果在调用shutdown()和线程池真正shutdown之间提交任务，会拒绝新任务
-        * 线程池会调用rejectedExecutionHandler来处理这个任务。如果没有设置默认是AbortPolicy，会抛出异常
-        * ThreadPoolExecutor类有几个内部实现类来处理这类情况：
-            - AbortPolicy 丢弃任务，抛运行时异常
-            - CallerRunsPolicy 执行任务
-            - DiscardPolicy 忽视，什么都不会发生
-            - DiscardOldestPolicy 从队列中踢出最先进入队列（最后一个执行）的任务
-        * 实现RejectedExecutionHandler接口，可自定义处理器
 ```
+
+
+
+## 自带移除策略
+
+两种情况会拒绝处理任务：
+
+- 当线程数已经达到maxPoolSize，切队列已满，会拒绝新任务
+- 当线程池被调用shutdown()后，会等待线程池里的任务执行完毕，再shutdown。如果在调用shutdown()和线程池真正shutdown之间提交任务，会拒绝新任务。线程池会调用rejectedExecutionHandler来处理这个任务。
+
+| 策略                  | 说明                                       |
+| ------------------- | ---------------------------------------- |
+| AbortPolicy         | 当任务添加到线程池中被拒绝时，它将抛出 RejectedExecutionException 异常 |
+| CallerRunsPolicy    | 当任务添加到线程池中被拒绝时，会在线程池当前正在运行的Thread线程池中处理被拒绝的任务 |
+| DiscardOldestPolicy | 当任务添加到线程池中被拒绝时，线程池会放弃等待队列中最旧的未处理任务，然后将被拒绝的任务添加到等待队列中 |
+| DiscardPolicy       | 当任务添加到线程池中被拒绝时，线程池将丢弃被拒绝的任务              |
+
+线程池默认的处理策略是**AbortPolicy**
+
+## 自定义移除策略
+
+实现RejectedExecutionHandler接口
+
+```java
+public class PushRejectedPolicy implements RejectedExecutionHandler {
+    private static Log logger = LogFactory.getLog(PushRejectedPolicy.class);
+
+    @Override
+    public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+        if (!executor.isShutdown()) {
+            Runnable thread = executor.getQueue().poll();
+            logger.warn("PushRejectedPolicy_%s", JsonUtil.writeAsString(thread));
+            executor.execute(r);
+        }
+    }
+}
+```
+
+## 自定义ThreadPoolFactory
+
+如下，将poolName加上，方便定位问题。
+
+```java
+public class PushThreadFactory implements ThreadFactory {
+    private static final AtomicInteger poolNumber = new AtomicInteger(1);
+    private final ThreadGroup group;
+    private final AtomicInteger threadNumber = new AtomicInteger(1);
+    private final String namePrefix;
+
+    public PushThreadFactory(String poolName) {
+        SecurityManager s = System.getSecurityManager();
+        group = (s != null) ? s.getThreadGroup() :
+                Thread.currentThread().getThreadGroup();
+        namePrefix = poolName + "-" +
+                poolNumber.getAndIncrement() +
+                "-thread-";
+    }
+
+    public Thread newThread(Runnable r) {
+        Thread t = new Thread(group, r,
+                namePrefix + threadNumber.getAndIncrement(),
+                0);
+        if (t.isDaemon())
+            t.setDaemon(false);
+        if (t.getPriority() != Thread.NORM_PRIORITY)
+            t.setPriority(Thread.NORM_PRIORITY);
+        return t;
+    }
+}
+```
+
+
 
 ## 执行顺序
 
@@ -107,17 +168,6 @@ beforeExecute() ：任务执行之前
 terminated() : 整个线程池停止之后执行
 
 
-
-## 添加任务失败策略
-
-setRejectedExecutionHandler() 添加任务失败后的执行策略，可以自定义，实现RejectedExecutionHandler 即可
-
-已经实现的有：
-
-ThreadPoolExecutor.AbortPolicy：表示拒绝任务并抛出异常 
-ThreadPoolExecutor.DiscardPolicy：表示拒绝任务但不做任何动作 
-ThreadPoolExecutor.CallerRunsPolicy：表示拒绝任务，并在调用者的线程中直接执行该任务 
-ThreadPoolExecutor.DiscardOldestPolicy：表示先丢弃任务队列中的第一个任务，然后把这个任务加进队列。 
 
 
 

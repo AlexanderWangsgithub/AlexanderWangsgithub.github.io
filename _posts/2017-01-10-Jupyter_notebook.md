@@ -74,38 +74,10 @@ ln -s /usr/local/Cellar/zlib/1.2.8/include/* /usr/local/include
 ln -s /usr/local/Cellar/zlib/1.2.8/lib/* /usr/local/lib
 ```
 
-
-
-## pyenv
-
-pyenv可以用来管理和切换不同的python版本
-
-.zshrc中添加
-
-```shell
-xport PYENV_ROOT=/usr/local/opt/pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-```
-
-usage:
+## 安装
 
 ```
-pyenv versions
-pyenv install --list
-pyenv global 3.6.0
-pyenv rehash #使用 pip 安装模块后，更新数据库；
-pyenv uninstall #卸载某个版本
-pyenv update #更新 pyenv 及其插件
-```
-
-## virtualenv
-
-```
-pip install virtualenv
-cd project_path
-virtualenv venv
-virtualenv -p /usr/local/bin/python3 venv #指定解释器
-deactivate
+pip3 install jupyter
 ```
 
 ## 使用

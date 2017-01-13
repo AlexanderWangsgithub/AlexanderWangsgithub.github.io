@@ -1,48 +1,64 @@
 ---
 layout: post
-title: The manual of building a static blog website like this.
+title: 教妹子搭博客
 categories: [blog]
 tags: [Efficiency]
 description: 
 ---
 
+# 教妹子搭博客
 
+[TOC]
 
-# The manual of building a static blog.
+## 注册GitHub账号
 
-1. ## Get the theme repository and rename.
+[地址](https://github.com/)
 
-   ```
-    git clone https://github.com/Azeril/azeril.github.io.git
-    mv azeril.github.io AlexanderWangsgithub.github.io
-   ```
+用户名为yourname，下面会一直用到。
 
-   ​
+## 创建repository
 
-2. ## Edit your personal profile.
+repository的名字是yourname.github.io
 
-   ```
-    edit _config.yml
-    git add .
-    git commit -m"init config"
-   ```
+```
+git clone https://github.com/AlexanderWangsgithub/blog_template.git
+mv blog_template yourname.github.io
+```
 
-   ​
+## 修改config
 
-3. ## Remote the local repository to your repo on github.
+打开项目目录，修改_config.yml，把YourName替换成你的用户名yourname，还有邮箱之类的也替换掉。
 
-    ```
-   git remote set-url origin https://github.com/AlexanderWangsgithub/AlexanderWangsgithub.github.io.git
-    ```
+## Push到GitHub
 
-   ​
+```
+git remote add origin https://github.com/yourname/yourname.github.io.git
+git add .
+git commit -m "init"
+git push origin master
+```
 
-4. ## Push changes to github.
+输入用户名密码
 
-   ```
-    git push -u origin master
-   ```
+## Done！
 
-   ​
+打开链接：https://yourname.github.io/
+
+## SSH
+
+每次都输用户名密码比较麻烦，可以使用ssh的方式。
+
+[教程](https://alexanderwangsgithub.github.io/blog/GitLab_and_GitHub_store_SSHKey.html)
+
+## Markdown
+
+[在线编辑&教程](https://maxiang.io/)
+
+[编辑器Typora](https://typora.io/)，好用到想交钱。
+
+写博客
+
+在目录`_post`目录下血博客，按照日期-名字命名，开头指定下样式，照里面的例子模范吧。写完Push到GitHub。
+
 
 
