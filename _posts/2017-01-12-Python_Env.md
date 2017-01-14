@@ -1,11 +1,9 @@
-
-
 ---
 layout: post
 title: Python开发环境
 categories: [blog]
-tags: [Python]
-description: 
+tags: [Python] 
+description:
 ---
 
 # Python开发环境

@@ -2,7 +2,7 @@
 layout: post
 title: 使用Jupyter制作slides
 categories: [blog]
-tags: [tags]
+tags: [Python]
 description: 
 ---
 
