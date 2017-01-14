@@ -10,7 +10,10 @@ description:
 
 [TOC]
 
+[工程地址](https://github.com/AlexanderWangsgithub/Jupyter_Quick_Start)
+
 ## 如何本地运行本教程
+
 1. 安装Jupyter到本地，详见[Jupyter Notebook](https://alexanderwangsgithub.github.io/blog/Jupyter_notebook.html)
 2. 安装git后，执行git clone 
 3. 到笔记本目录下，执行`jupyter notebook`
