@@ -59,10 +59,20 @@ y^复制光标所在位置到行首内容到缓存区
 
 stream editor
 
+末尾加g表示全部替换
+
 ```
 cat sample-http-server|sed 's/21_1/24/g'
 sed -i 's/21_1/24/g' sample-http-server直接修改文件，慎重
 ```
+
+批量替换文件名
+
+```shell
+for file in 0.*.mp3;do echo "$file";mv -f "$file" `echo "$file"|sed 's/^0\.\ //'|sed 's/\ /_/g'`;done
+```
+
+
 
 [manual](http://coolshell.cn/articles/9104.html)
 
