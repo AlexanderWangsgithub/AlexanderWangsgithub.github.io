@@ -108,6 +108,23 @@ fi
 
 跟Python差不多。
 
+示例：
+
+```shell
+#!/bin/bash
+export KEEPER_DIR="ature/hell"
+successFunc(){
+	echo $KEEPER_DIR" is current success";
+}
+failFunc(){
+	echo $KEEPER_DIR" is current error";
+}
+#注意空格
+if [[ $KEEPER_DIR == master || $KEEPER_DIR == release || $KEEPER_DIR == develop || $KEEPER_DIR =~ feature.* ]];then successFunc; else failFunc; fi
+```
+
+
+
 ### while
 
 ```shell
