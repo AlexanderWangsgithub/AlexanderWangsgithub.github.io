@@ -30,6 +30,7 @@ zhihu_username: null
 markdown: kramdown
 kramdown:
   input: GFM
+  use_coderay: true
 highlighter: rouge
 
 gems: 
