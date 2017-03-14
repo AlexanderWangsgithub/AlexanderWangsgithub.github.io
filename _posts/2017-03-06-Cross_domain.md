@@ -63,4 +63,18 @@ alert('请求已发送，请等待响应...');
 
    ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加<script>标签来调用服务器提供的js脚本。
 
+   ### 4.CORS
+
+   （Cross-origin resource sharing）
+
+   Jsonp因为只能用GET请求，所以使用范围小，这个是使用最广泛的。
+
+   浏览器请求体中加上跨域请求的字段。
+
+   简单请求：在头信息之中，增加一个`Origin`字段，声明来源。eg：`Origin: http://api.bob.com`
+
+   非简单请求：浏览器会先发送预检请求，"预检"请求用的请求方法是`OPTIONS`，获得回应后方可请求。
+
+   [详细说明请看阮一峰日志](http://www.ruanyifeng.com/blog/2016/04/cors.html)
+
    ​
