@@ -6,6 +6,10 @@ tags: [Efficiency]
 description: 
 ---
 
+* TOC
+{:toc}
+
+## Why use
 使用Vagrant作为开发环境
 使用Vagrant作为开发环境的好处是
 - 一次配置，到处可用，并且跨系统;

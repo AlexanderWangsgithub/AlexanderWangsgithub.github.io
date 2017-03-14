@@ -8,7 +8,8 @@ description:
 
 CQRS and EventSourcing
 
-[TOC]
+* TOC
+{:toc}
 
 ## CQRS
 

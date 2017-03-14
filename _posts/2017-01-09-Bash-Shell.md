@@ -8,6 +8,7 @@ description:
 
 Java or Python程序员的shell快速教程
 
+* TOC
 {:toc}
 
 ## 介绍

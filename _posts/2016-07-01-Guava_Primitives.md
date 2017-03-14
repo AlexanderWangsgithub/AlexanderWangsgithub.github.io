@@ -8,6 +8,9 @@ description:
 
 ## Guava Primitives
 
+* TOC
+{:toc}
+
 ### 基本类型对应关系
 
 jdk原生类型|com.google.common.primitives.*

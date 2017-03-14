@@ -8,7 +8,8 @@ description:
 
 使用Gradle发布中央Maven仓库
 
-[TOC]
+* TOC
+{:toc}
 
 ## 注册&创建issue
 

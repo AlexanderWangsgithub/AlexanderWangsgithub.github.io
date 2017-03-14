@@ -8,7 +8,8 @@ description:
 
 关于个推推送GC异常分析
 
-[TOC]
+* TOC
+{:toc}
 
 ## Dump
 

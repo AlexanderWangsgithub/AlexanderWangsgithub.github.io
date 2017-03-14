@@ -58,7 +58,7 @@ Windows&Mac上的TCP分析神器，颜色标记状态已经follow stream、flow 
 
 2. 对有问题条目，右击——>Follow——>TCP Stream
 
-   ![alias](/img/post/2017-03-14/tcp_stream.png)
+![alias](/img/post/2017-03-14/follow_stream.png)
 
 3. 菜单栏：statistics——>Flow Graph
 

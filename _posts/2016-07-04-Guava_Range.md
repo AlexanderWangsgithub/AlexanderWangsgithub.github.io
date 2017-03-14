@@ -8,6 +8,9 @@ description:
 
 ## Guava Range
 
+* TOC
+{:toc}
+
 区间实例可以由[Range](http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/Range.html)类的静态方法获取
 
 (a..b)|open(C,C)

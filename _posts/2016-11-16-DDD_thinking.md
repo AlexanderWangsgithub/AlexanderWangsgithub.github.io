@@ -6,7 +6,8 @@ tags: [Architecture]
 description: 
 ---
 
-
+* TOC
+{:toc}
 
 #### 聚合根
 

@@ -6,7 +6,8 @@ tags: [Java]
 description: 
 ---
 
-[TOC]
+* TOC
+{:toc}
 
 ## 理解
 

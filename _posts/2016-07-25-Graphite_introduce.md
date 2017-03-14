@@ -8,6 +8,9 @@ description: 服务调用时间和频次等信息等监控工具
 
 ## Graphite
 
+* TOC
+{:toc}
+
 Vine的监控使用Graphite，工具包提供埋点工具，在FrameWork中埋点。结合Grafana实现丰富的图形监控。
 
 **前端：**渲染图表

@@ -8,7 +8,10 @@ description: 应对大并发量的缓冲
 
 # Async异步队列编程模型
 
-经过压测，未使用。
+* TOC
+{:toc}
+
+压测通过，未deploy。
 
 ## 应用场景
 

@@ -10,7 +10,8 @@ description:
 
 Jupyter note非常适合写教程，帮助别人节省时间，如果需要进行一场分享会的话，可以生成slides作为PPT使用。
 
-[TOC]
+* TOC
+{:toc}
 
 ## Env
 

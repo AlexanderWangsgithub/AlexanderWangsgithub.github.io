@@ -8,9 +8,8 @@ description:
 
 # 常见药草有效医学成分及功效
 
-[TOC]
-
-
+* TOC
+{:toc}
 
 ## 葛根
 

@@ -6,6 +6,9 @@ tags: [ReadNote]
 description: 
 ---
 
+* TOC
+{:toc}
+
 ## 自律
 
 **推迟满足感**

@@ -8,6 +8,9 @@ description:
 
 ## 图片压缩命令
 
+* TOC
+{:toc}
+
 ### png
 
 `brew install pngcrush`

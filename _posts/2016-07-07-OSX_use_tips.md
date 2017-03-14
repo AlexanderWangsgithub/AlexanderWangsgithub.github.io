@@ -8,6 +8,9 @@ description:
 
 Mac OSX小功能
 
+* TOC
+{:toc}
+
 ### 查单词
 command+control+d
 

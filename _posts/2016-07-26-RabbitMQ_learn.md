@@ -8,7 +8,8 @@ description:
 
 # 一些业务使用RabbitMQ的总结
 
-[TOC]
+* TOC
+{:toc}
 
 ## Core理解
 

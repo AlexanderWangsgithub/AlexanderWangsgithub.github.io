@@ -8,6 +8,9 @@ description:
 
 # Python开发环境
 
+* TOC
+{:toc}
+
 ## pyenv
 
 pyenv可以用来管理和切换不同的python版本

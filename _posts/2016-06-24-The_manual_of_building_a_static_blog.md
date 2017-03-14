@@ -8,7 +8,8 @@ description:
 
 # 教妹子搭博客
 
-[TOC]
+* TOC
+{:toc}
 
 ## 注册GitHub账号
 

@@ -6,7 +6,10 @@ tags: [Architecture]
 description: 
 ---
 
+# 分布式事务——回退与补偿
 
+* TOC
+{:toc}
 
 ## 回退
 

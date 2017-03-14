@@ -10,7 +10,8 @@ description:
 
 # Jupyter Notebook
 
-[TOC]
+* TOC
+{:toc}
 
 
 

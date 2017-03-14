@@ -8,7 +8,8 @@ description:
 
 # 设计数据表时的索引使用
 
-[TOC]
+* TOC
+{:toc}
 
 ## 场景
 

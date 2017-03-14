@@ -8,7 +8,8 @@ description:
 
 # Thrift manual
 
-[TOC]
+* TOC
+{:toc}
 
 ## Install
 

@@ -8,7 +8,8 @@ description:
 
 使用料理机的一些总结
 
-
+* TOC
+{:toc}
 
 ## 打豆浆
 

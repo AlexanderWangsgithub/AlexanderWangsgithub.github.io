@@ -11,7 +11,8 @@ description:
 ​   SOA服务需要守护进程保证服务不会挂掉，可以在Container启动的时候或者使用发布系统启动Damon，SOA中间件同时接收到supervisor对上一个Git Head的INT信号，实现新的git commit的发布，这里面涉及到一个注册中心通知服务的时间。
 ​	这意味着，可以在发布系统接入supervisor实现更好的管控。
 
-[TOC]
+* TOC
+{:toc}
 
 ## 介绍
 

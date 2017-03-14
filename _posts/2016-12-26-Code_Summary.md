@@ -8,7 +8,8 @@ description:
 
 一些代码总结
 
-[TOC]
+* TOC
+{:toc}
 
 ## Java
 

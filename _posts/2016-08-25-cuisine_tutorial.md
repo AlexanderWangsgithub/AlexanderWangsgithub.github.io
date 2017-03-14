@@ -8,7 +8,8 @@ description:
 
 整理一些看过的美食视频
 
-[TOC]
+* TOC
+{:toc}
 
 ## 纪录片
 

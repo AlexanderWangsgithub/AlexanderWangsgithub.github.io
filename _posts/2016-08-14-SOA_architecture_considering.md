@@ -8,7 +8,8 @@ description:
 
 微服务SOA架构的考虑
 
-[TOC]
+* TOC
+{:toc}
 
 ## 说明
 
