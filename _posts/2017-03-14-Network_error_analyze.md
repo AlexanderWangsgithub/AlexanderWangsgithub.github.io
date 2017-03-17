@@ -52,7 +52,9 @@ tcp重复应答，这个也很多。
 –rand-source：使用随机的IP地址，目标机器看到一堆ip，不能定位你的实际IP；也可以使用-a或–spoof隐藏主机名
 ```
 
-如`hping3 -S --flood -rand--source -p 80 [hostname/ip]`
+如`hping3 -S --flood -rand--source -p 80 192.168.1.199`
+
+[详细文档](http://man.linuxde.net/hping3)
 
 
 
