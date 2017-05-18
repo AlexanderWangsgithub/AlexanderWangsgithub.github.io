@@ -1,5 +1,13 @@
+---
+layout: post
+title: Python Snippet
+categories: [blog]
+tags: [Python]
+description: 
+---
 
-
+* TOC
+{:toc}
 
 
 ### Field
