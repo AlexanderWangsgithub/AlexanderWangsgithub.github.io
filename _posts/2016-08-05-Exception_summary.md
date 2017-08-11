@@ -84,6 +84,6 @@ Exception是root，所以在不同系统服务调用的时候，有一些异常�
 ```
 at com.google.common.reflect.Invokable$ConstructorInvokable.invokeInternal(Invokable.java:242)
 	at com.google.common.reflect.Invokable.invoke(Invokable.java:102)
-	at me.ele.napos.vine.common.reflect.VInvoke.newInstance(VInvoke.java:51)
+	at 
 ```
 
