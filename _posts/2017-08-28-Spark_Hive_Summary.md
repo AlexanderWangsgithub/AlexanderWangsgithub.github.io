@@ -80,7 +80,16 @@ dataRDD.cache()可以将计算结果保存在分布式存储里，下次用起�
 模式相当于ORM中的Beans，如：
 
 ```scala
-val unitRDD = spark.sparkContext.parallelize(Array("1 101 'wang'","1 1181 'gang","2 1931 'subway")).map(_.split(" "))
+val unitRDD = s val unitRDD = spark.sparkContext.parallelize(Array("1 101 'wang'","1 1181 'gang","2 1931 'subway")).map(_.split(" "))
+  val unitSchema = StructType(List(
+    StructField("organization_id", LongType, true),
+    StructField("user_id", LongType, true),
+    StructField("user_name", StringType, true)
+  ))
+  val unitRDDRow = unitRDD.map(p => Row(p(0).toLong, p(1).toLong, p(2).trim()))
+  val unitDF = spark.createDataFrame(unitRDDRow, unitSchema)
+  unitDF.createOrReplaceTempView("unit_template")//注册表
+  spark.sql("insert into temp.unit select * from unit_template")park.sparkContext.parallelize(Array("1 101 'wang'","1 1181 'gang","2 1931 'subway")).map(_.split(" "))
 val unitSchema = StructType(List(
       StructField("organization_id", LongType, true),
       StructField("user_id", LongType, true),
@@ -98,3 +107,4 @@ sc.sql("insert into temp.unit select * from unit_template")
 val unitDF = sc.sql(select * from temp.unit)
 ```
 
+ [sql-programming-guide](http://spark.apache.org/docs/latest/sql-programming-guide.html)
