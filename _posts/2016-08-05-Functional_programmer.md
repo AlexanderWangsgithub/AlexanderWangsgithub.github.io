@@ -24,7 +24,17 @@ Lambda好用但是要注意：
 
 ### 判空filter
 
-判空要对每一个元素对象（p）进行判空。
+Optional
+
+```java
+Optional.ofNullable(ids).orElseGet(Collections::emptyList).stream()
+        .distinct()
+        .map(p -> getPosition(positionParams, p, function))
+        .filter(p -> p != null)
+        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+```
+
+要对每一个元素对象（p）进行判空。
 
 ```java
 noticeSet.stream()
@@ -74,6 +84,12 @@ oldNotice.stream().map(p -> new SimpleNotice(p.getId(), NoticeType.PERMESSAGE.ge
 
 ```java
         List<Province> provinceList = provinceNameMap.entrySet().stream().map(p -> new Province(p.getKey(), p.getValue(), citysMap.get(p.getKey()))).collect(Collectors.toList());
+```
 
+### collector
+
+```java
+positionList.stream().collect(Collectors.toMap(DataPosition::getId, x -> x.getPosition().intValue())); positionList.stream().collect(Collectors.toMap(DataPosition::getId, x -> x.getPosition().intValue(), (key1, key2) -> {
+                return key2;//如果存在重复value
 ```
 

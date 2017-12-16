@@ -84,3 +84,11 @@ git pull fork_father master
 
 即除了origin，再添加一个来源。
 
+### ignore
+
+对于已经在.git记录的文件，后补充ignore文件已经没用了，需要使用如下命令：
+
+```
+git rm --cached -r .idea
+```
+
