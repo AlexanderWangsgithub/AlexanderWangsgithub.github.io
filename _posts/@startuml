@@ -1,0 +1,12 @@
+@startuml
+
+start
+:"sendMessageByShopId";
+if ("判断是否已灰度") then (true)
+    :getUniversalAccountByShop;
+    :sendMessageByUniversal;
+else
+    :sendMessageByShopId;
+endif :"落DB";
+stop
+@enduml

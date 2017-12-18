@@ -79,7 +79,11 @@ description:
 
 实现：语义化接口之上增加：配置服务、图表渲染引擎（基于可视化编码的图形语法）
 
-[G2](https://antv.alipay.com/zh-cn/index.html)
+[G2](https://antv.alipay.com/zh-cn/index.html)：蚂蚁开源，上手简单
+
+[ECharts](http://echarts.baidu.com/feature.html)：百度开源已久，bug修的差不多了
+
+[Data-Driven Documents](https://d3js.org/)：D3是图形化top级项目，更强大但是学习曲线陡。
 
 ### 数据产品配置化
 
